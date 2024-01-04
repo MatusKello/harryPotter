@@ -30,5 +30,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-fragments': 'error',
     'react/jsx-no-undef': 'error',
+    'react/prop-types': 0,
   },
 };

@@ -1,16 +1,12 @@
-import { ThemeProvider } from '@mui/material/styles';
-import theme from './configs/theme';
-import { Typography } from '@mui/material';
+import MainPage from './pages/MainPage';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <Typography variant='h2' sx={{ color: theme.palette.primary.main }}>
-          Harry potter
-        </Typography>
-      </div>
-    </ThemeProvider>
+    <>
+      <LanguageSwitcher />
+      <MainPage />
+    </>
   );
 };
 
