@@ -1,11 +1,9 @@
-import MainPage from './pages/MainPage';
-import LanguageSwitcher from './components/LanguageSwitcher';
+import AllRoutes from './components/AllRoutes';
 
 const App = () => {
   return (
     <>
-      <LanguageSwitcher />
-      <MainPage />
+      <AllRoutes />
     </>
   );
 };
