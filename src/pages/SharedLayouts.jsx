@@ -6,8 +6,8 @@ const SharedLayouts = () => {
   return (
     <div>
       <LanguageSwitcher />
-      <Outlet />
       <NavBar />
+      <Outlet />
     </div>
   );
 };
