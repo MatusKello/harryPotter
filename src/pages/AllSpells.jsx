@@ -1,10 +1,21 @@
-import React from 'react';
+import { useFetchAllSpellsQuery } from '../apiSlice';
+import { Typography } from '@mui/material';
+import DataFetcherWrapper from '../components/DataFetcherWrapper';
 
 const AllSpells = () => {
   return (
-    <div>
-      <p>API</p>
-    </div>
+    <DataFetcherWrapper queryHook={useFetchAllSpellsQuery}>
+      {(data) => (
+        <div>
+          {data.map((spell) => (
+            <div key={spell.id}>
+              <Typography>{spell.name}</Typography>
+              <Typography>{spell.description}</Typography>
+            </div>
+          ))}
+        </div>
+      )}
+    </DataFetcherWrapper>
   );
 };
 
