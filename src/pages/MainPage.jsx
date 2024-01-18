@@ -2,7 +2,15 @@ import Translation from '../components/Translation';
 
 const MainPage = () => {
   return (
-    <div>
+    <div
+      style={{
+        height: '100vh', // Set the height to 100% of the viewport height
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <Translation
         text='welcome'
         typographyProps={{

@@ -11,27 +11,40 @@ const HogStudentInfo = () => {
 
   return (
     <DataFetcherWrapper queryResponse={[exactStudent]}>
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         <Card
           sx={{
             background: (theme) => theme.palette.secondary.main,
             width: '30rem',
           }}
         >
-          <Typography>Name: {exactStudentData.name || ''}</Typography>
-          <Typography>House: {exactStudentData.house || ''}</Typography>
-          <Typography>Ancestry: {exactStudentData.ancestry || ''}</Typography>
-          <Typography>Eye color: {exactStudentData.eyeColour || ''}</Typography>
+          <Typography>Name: {exactStudentData.name || 'Unknown'}</Typography>
+          <Typography>House: {exactStudentData.house || 'Unknown'}</Typography>
           <Typography>
-            Hair color:{exactStudentData.hairColour || ''}
+            Ancestry: {exactStudentData.ancestry || 'Unknown'}
           </Typography>
           <Typography>
-            Wand core: {exactStudentData.wand?.core || ''}
+            Eye color: {exactStudentData.eyeColour || 'Unknown'}
           </Typography>
-          <Typography>Patronus: {exactStudentData.patronus || ''}</Typography>
-          <Typography>Actor/Actress: {exactStudentData.actor || ''}</Typography>
           <Typography>
-            {exactStudentData.alive ? 'alive' : 'dead' || ''}
+            Hair color:{exactStudentData.hairColour || 'Unknown'}
+          </Typography>
+          <Typography>
+            Wand core: {exactStudentData.wand?.core || 'Unknown'}
+          </Typography>
+          <Typography>
+            Patronus: {exactStudentData.patronus || 'Unknown'}
+          </Typography>
+          <Typography>
+            Actor/Actress: {exactStudentData.actor || 'Unknown'}
+          </Typography>
+          <Typography>
+            {exactStudentData.alive ? 'alive' : 'dead' || 'Unknown'}
           </Typography>
         </Card>
         <img src={exactStudentData.image} alt={exactStudent.name || ''} />
