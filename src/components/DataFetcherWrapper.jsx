@@ -1,19 +1,22 @@
-const DataFetcherWrapper = ({ queryHook, children }) => {
-  const { data, error, isLoading, isSuccess } = queryHook();
+import { Box } from '@mui/material';
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+const DataFetcherWrapper = ({ queryResponse, children }) => {
+  const isAnyLoading = queryResponse?.some(
+    (query) => query.isLoading === true || query.isFetching === true
+  );
+  const isAnyError = queryResponse?.some((query) => query.isError === true);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (isSuccess) {
-    return children(data);
-  }
-
-  return null;
+  return (
+    <>
+      {isAnyLoading ? (
+        <Box>Please wait</Box>
+      ) : isAnyError ? (
+        <Box>Something went wrong</Box>
+      ) : (
+        <>{children}</>
+      )}
+    </>
+  );
 };
 
 export default DataFetcherWrapper;

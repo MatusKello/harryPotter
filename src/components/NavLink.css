@@ -1,0 +1,12 @@
+.linkStyle {
+  text-decoration: none;
+  color: #740001;
+  margin-right: 1rem;
+  font-size: large;
+}
+
+.active {
+  text-decoration: underline;
+  color: #ff856e;
+  font-weight: bold;
+}

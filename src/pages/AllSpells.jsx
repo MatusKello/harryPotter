@@ -1,20 +1,19 @@
 import { useFetchAllSpellsQuery } from '../apiSlice';
-import { Typography } from '@mui/material';
+import { Box, Card, Typography } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
 
 const AllSpells = () => {
+  const spells = useFetchAllSpellsQuery();
   return (
-    <DataFetcherWrapper queryHook={useFetchAllSpellsQuery}>
-      {(data) => (
-        <div>
-          {data.map((spell) => (
-            <div key={spell.id}>
-              <Typography>{spell.name}</Typography>
-              <Typography>{spell.description}</Typography>
-            </div>
-          ))}
-        </div>
-      )}
+    <DataFetcherWrapper queryHook={[spells]}>
+      <Box>
+        {spells?.data?.map((spell) => (
+          <Card key={spell.id}>
+            <Typography>Spell: {spell.name}</Typography>
+            <Typography>Spell description: {spell.description}</Typography>
+          </Card>
+        ))}
+      </Box>
     </DataFetcherWrapper>
   );
 };

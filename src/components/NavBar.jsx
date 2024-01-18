@@ -1,13 +1,24 @@
 import { NavLink } from 'react-router-dom';
+import './NavLink.css';
 
 const NavBar = () => {
   return (
     <div>
-      <NavLink to='/'>Main page</NavLink>
-      <NavLink to='hogwarts-students'>Hogwarts students</NavLink>
-      <NavLink to='hogwarts-teachers'>Hogwarts teachers</NavLink>
-      <NavLink to='hogwarts-houses'>Hogwarts houses</NavLink>
-      <NavLink to='all-spells'>All- spells</NavLink>
+      <NavLink className='linkStyle' to='/'>
+        Main page
+      </NavLink>
+      <NavLink className='linkStyle' to='hogwarts-students'>
+        Hogwarts students
+      </NavLink>
+      <NavLink className='linkStyle' to='hogwarts-teachers'>
+        Hogwarts teachers
+      </NavLink>
+      <NavLink className='linkStyle' to='hogwarts-houses'>
+        Hogwarts houses
+      </NavLink>
+      <NavLink className='linkStyle' to='all-spells'>
+        All- spells
+      </NavLink>
     </div>
   );
 };

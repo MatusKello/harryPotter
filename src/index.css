@@ -3,3 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    #3a406b,
+    #303761,
+    #262e57,
+    #1c254d,
+    #121d43,
+    #1d264d,
+    #282f58,
+    #333963,
+    #565a87,
+    #7a7dac,
+    #a0a2d4,
+    #c7c8fc
+  );
+}

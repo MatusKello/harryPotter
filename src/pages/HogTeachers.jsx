@@ -1,17 +1,18 @@
 import { useFetchTeachersQuery } from '../apiSlice';
-import { Typography } from '@mui/material';
+import { Box, Card, Typography } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
 
 const HogTeachers = () => {
+  const allTeachers = useFetchTeachersQuery();
   return (
-    <DataFetcherWrapper queryHook={useFetchTeachersQuery}>
-      {(data) => (
-        <div>
-          {data.map((teacher) => (
-            <Typography key={teacher.id}>{teacher.name}</Typography>
-          ))}
-        </div>
-      )}
+    <DataFetcherWrapper queryResponse={[allTeachers]}>
+      <Box>
+        {allTeachers?.data?.map((teacher) => (
+          <Card key={teacher.id}>
+            <Typography>{teacher.name}</Typography>
+          </Card>
+        ))}
+      </Box>
     </DataFetcherWrapper>
   );
 };
