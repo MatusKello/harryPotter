@@ -18,6 +18,9 @@ export const api = createApi({
     fetchStudentById: builder.query({
       query: (id) => `character/${id}`,
     }),
+    fetchTeacherById: builder.query({
+      query: (id) => `character/${id}`,
+    }),
   }),
   reducerPath: 'potterApi',
 });
@@ -27,4 +30,5 @@ export const {
   useFetchTeachersQuery,
   useFetchAllSpellsQuery,
   useFetchStudentByIdQuery,
+  useFetchTeacherByIdQuery,
 } = api;

@@ -6,6 +6,7 @@ import HogTeachers from './../pages/HogTeachers';
 import AllSpells from './../pages/AllSpells';
 import HogHouses from './../pages/HogHouses';
 import HogStudentInfo from '../pages/HogStudentInfo';
+import HogTeacherInfo from '../pages/HogTeacherInfo';
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AllRoutes = () => {
           <Route path='hogwarts-students' element={<HogStudents />} />
           <Route path='hogwarts-students/:id' element={<HogStudentInfo />} />
           <Route path='hogwarts-teachers' element={<HogTeachers />} />
+          <Route path='hogwarts-teachers/:id' element={<HogTeacherInfo />} />
           <Route path='hogwarts-houses' element={<HogHouses />} />
           <Route path='all-spells' element={<AllSpells />} />
         </Route>
