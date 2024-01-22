@@ -1,24 +1,26 @@
 import { useFetchAllStudentsQuery } from '../apiSlice';
-import { Box, Card, Typography } from '@mui/material';
+import { Box, Card } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
 import { NavLink } from 'react-router-dom';
+import Translation from '../components/Translation';
 
 const HogStudents = () => {
   const allStudents = useFetchAllStudentsQuery();
 
   return (
     <DataFetcherWrapper queryResponse={[allStudents]}>
-      <Typography
-        variant='h2'
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          mb: 2,
-          color: (theme) => theme.palette.primary.main,
+      <Translation
+        text='hogwartsStudents'
+        typographyProps={{
+          sx: {
+            display: 'flex',
+            justifyContent: 'center',
+            mb: 2,
+            color: (theme) => theme.palette.primary.main,
+          },
+          variant: 'h2',
         }}
-      >
-        Hogwarts students
-      </Typography>
+      />
       <Box
         sx={{
           display: 'grid',
@@ -33,9 +35,11 @@ const HogStudents = () => {
               m: 1,
             }}
           >
-            <Typography sx={{ color: (theme) => theme.palette.primary.main }}>
-              {student.name}
-            </Typography>
+            <Translation
+              text={student.name}
+              typographyProps={{ color: (theme) => theme.palette.primary.main }}
+            />
+
             <NavLink
               to={`/hogwarts-students/${student.id}`}
               style={{ textDecoration: 'none', color: 'inherit' }}

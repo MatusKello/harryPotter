@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Button, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import './NavLink.css';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const NavBar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -12,9 +13,7 @@ const NavBar = () => {
 
   return (
     <>
-      <Button variant='contained' onClick={toggleDrawer(true)}>
-        Open menu
-      </Button>
+      <MenuIcon sx={{}} onClick={toggleDrawer(true)} />
       <Drawer anchor='left' open={drawerOpen} onClose={toggleDrawer(false)}>
         <List>
           <ListItem

@@ -4,7 +4,7 @@ const MainPage = () => {
   return (
     <div
       style={{
-        height: '100vh', // Set the height to 100% of the viewport height
+        height: '90vh', // Set the height to 100% of the viewport height
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
