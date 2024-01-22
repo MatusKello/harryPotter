@@ -1,10 +1,11 @@
+import { Box } from '@mui/material';
 import Translation from '../components/Translation';
 
 const MainPage = () => {
   return (
-    <div
-      style={{
-        height: '90vh', // Set the height to 100% of the viewport height
+    <Box
+      sx={{
+        height: '93vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -25,7 +26,7 @@ const MainPage = () => {
           sx: { color: (theme) => theme.palette.primary.main },
         }}
       />
-    </div>
+    </Box>
   );
 };
 

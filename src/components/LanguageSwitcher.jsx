@@ -1,20 +1,23 @@
 import { useTranslation } from 'react-i18next';
 import { Button } from '@mui/material';
+import EngFlag from '../images/EngFlag.png';
+import SlovakFlag from '../images/SlovakFlag.png';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
   const changeLanguage = (language) => {
-    console.log('Changing language to:', language);
     i18n.changeLanguage(language);
   };
 
   return (
     <div>
       <Button variant='contained' onClick={() => changeLanguage('en')}>
-        English
+        <img src={EngFlag} alt='' /> ENG
       </Button>
+
       <Button variant='contained' onClick={() => changeLanguage('sk')}>
+        <img src={SlovakFlag} />
         Slovak
       </Button>
     </div>
