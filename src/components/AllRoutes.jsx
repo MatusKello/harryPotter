@@ -15,7 +15,8 @@ const AllRoutes = () => {
           <Route index element={<MainPage />} />
           <Route path='hogwarts-students' element={<HogStudents />} />
           <Route path='hogwarts-teachers' element={<HogTeachers />} />
-          <Route path='hogwarts-character/:id' element={<CharactersInfo />} />
+          <Route path='hogwarts-students/:id' element={<CharactersInfo />} />
+          <Route path='hogwarts-teachers/:id' element={<CharactersInfo />} />
           <Route path='hogwarts-houses' element={<HogHouses />} />
           <Route path='all-spells' element={<AllSpells />} />
         </Route>

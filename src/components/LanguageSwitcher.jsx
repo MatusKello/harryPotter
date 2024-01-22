@@ -13,12 +13,11 @@ const LanguageSwitcher = () => {
   return (
     <div>
       <Button variant='contained' onClick={() => changeLanguage('en')}>
-        <img src={EngFlag} alt='' /> ENG
+        <img src={EngFlag} alt='' />
       </Button>
 
       <Button variant='contained' onClick={() => changeLanguage('sk')}>
         <img src={SlovakFlag} />
-        Slovak
       </Button>
     </div>
   );
