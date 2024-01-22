@@ -1,22 +1,24 @@
 import { useFetchAllSpellsQuery } from '../apiSlice';
 import { Box, Card, Typography } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
+import Translation from '../components/Translation';
 
 const AllSpells = () => {
   const spells = useFetchAllSpellsQuery();
   return (
     <DataFetcherWrapper queryHook={[spells]}>
-      <Typography
-        variant='h2'
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          mb: 2,
-          color: (theme) => theme.palette.primary.main,
+      <Translation
+        text='spells'
+        typographyProps={{
+          sx: {
+            display: 'flex',
+            justifyContent: 'center',
+            mb: 2,
+            color: (theme) => theme.palette.primary.main,
+          },
+          variant: 'h2',
         }}
-      >
-        Spells in Harry Potter universe
-      </Typography>
+      />
       <Box
         sx={{
           display: 'grid',

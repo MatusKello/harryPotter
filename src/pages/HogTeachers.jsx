@@ -2,22 +2,24 @@ import { useFetchTeachersQuery } from '../apiSlice';
 import { Box, Card, Typography } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
 import { NavLink } from 'react-router-dom';
+import Translation from '../components/Translation';
 
 const HogTeachers = () => {
   const allTeachers = useFetchTeachersQuery();
   return (
     <DataFetcherWrapper queryResponse={[allTeachers]}>
-      <Typography
-        variant='h2'
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          mb: 2,
-          color: (theme) => theme.palette.primary.main,
+      <Translation
+        text='hogwartsTeachers'
+        typographyProps={{
+          sx: {
+            display: 'flex',
+            justifyContent: 'center',
+            mb: 2,
+            color: (theme) => theme.palette.primary.main,
+          },
+          variant: 'h2',
         }}
-      >
-        Teachers in Hogwarts
-      </Typography>
+      />
       <Box
         sx={{
           display: 'grid',
