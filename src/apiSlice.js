@@ -15,10 +15,7 @@ export const api = createApi({
     fetchAllSpells: builder.query({
       query: () => 'spells',
     }),
-    fetchStudentById: builder.query({
-      query: (id) => `character/${id}`,
-    }),
-    fetchTeacherById: builder.query({
+    fetchCharacterById: builder.query({
       query: (id) => `character/${id}`,
     }),
   }),
@@ -29,6 +26,5 @@ export const {
   useFetchAllStudentsQuery,
   useFetchTeachersQuery,
   useFetchAllSpellsQuery,
-  useFetchStudentByIdQuery,
-  useFetchTeacherByIdQuery,
+  useFetchCharacterByIdQuery,
 } = api;
