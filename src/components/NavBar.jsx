@@ -23,7 +23,7 @@ const NavBar = () => {
         onClick={toggleDrawer(true)}
       />
       <Drawer anchor='left' open={drawerOpen} onClose={toggleDrawer(false)}>
-        <List>
+        <List sx={{ background: (theme) => theme.palette.tertiary.light }}>
           <ListItem
             Button
             component={NavLink}
