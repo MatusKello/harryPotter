@@ -8,7 +8,7 @@ const MainPage = () => {
         height: '93vh',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+
         alignItems: 'center',
       }}
     >
@@ -19,13 +19,45 @@ const MainPage = () => {
           sx: { color: (theme) => theme.palette.primary.main },
         }}
       />
-      <Translation
-        text='author'
-        typographyProps={{
-          variant: 'caption',
-          sx: { color: (theme) => theme.palette.primary.main },
+      <Box
+        sx={{
+          position: 'relative',
+          '&:hover': {
+            borderColor: (theme) => theme.palette.secondary.main,
+          },
+          borderWidth: 2,
+          borderStyle: 'solid',
+          padding: 2,
+          borderRadius: 4,
+          width: 600,
+          textAlign: 'center',
         }}
-      />
+      >
+        <Translation
+          text='about'
+          typographyProps={{
+            variant: 'subtitle1',
+            sx: { color: (theme) => theme.palette.primary.main },
+          }}
+        />
+      </Box>
+      <br />
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          m: 1,
+        }}
+      >
+        <Translation
+          text='author'
+          typographyProps={{
+            variant: 'caption',
+            sx: { color: (theme) => theme.palette.secondary.dark },
+          }}
+        />
+      </Box>
     </Box>
   );
 };

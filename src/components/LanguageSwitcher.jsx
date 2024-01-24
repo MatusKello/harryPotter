@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { Button } from '@mui/material';
 import EngFlag from '../images/EngFlag.png';
 import SlovakFlag from '../images/SlovakFlag.png';
 
@@ -12,13 +11,18 @@ const LanguageSwitcher = () => {
 
   return (
     <div>
-      <Button variant='contained' onClick={() => changeLanguage('en')}>
-        <img src={EngFlag} alt='' />
-      </Button>
+      <img
+        style={{ cursor: 'pointer', marginRight: '1rem' }}
+        src={EngFlag}
+        alt=''
+        onClick={() => changeLanguage('en')}
+      ></img>
 
-      <Button variant='contained' onClick={() => changeLanguage('sk')}>
-        <img src={SlovakFlag} />
-      </Button>
+      <img
+        style={{ cursor: 'pointer' }}
+        src={SlovakFlag}
+        onClick={() => changeLanguage('sk')}
+      />
     </div>
   );
 };

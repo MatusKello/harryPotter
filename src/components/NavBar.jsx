@@ -13,7 +13,15 @@ const NavBar = () => {
 
   return (
     <>
-      <MenuIcon sx={{}} onClick={toggleDrawer(true)} />
+      <MenuIcon
+        sx={{
+          '&:hover': {
+            cursor: 'pointer',
+            color: (theme) => theme.palette.secondary.dark,
+          },
+        }}
+        onClick={toggleDrawer(true)}
+      />
       <Drawer anchor='left' open={drawerOpen} onClose={toggleDrawer(false)}>
         <List>
           <ListItem
