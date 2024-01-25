@@ -1,5 +1,5 @@
 import { useFetchAllStudentsQuery } from '../apiSlice';
-import { Box, Card } from '@mui/material';
+import { Box, Card, Typography } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
 import { NavLink } from 'react-router-dom';
 import Translation from '../components/Translation';
@@ -24,7 +24,7 @@ const HogStudents = () => {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', // Adjust the column width as needed
+          gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', // Adjust the column width as needed
         }}
       >
         {allStudents?.data?.map((student) => (
@@ -35,14 +35,26 @@ const HogStudents = () => {
               m: 1,
             }}
           >
-            <Translation
-              text={student.name}
-              typographyProps={{ color: (theme) => theme.palette.primary.main }}
-            />
+            <Typography sx={{ color: (theme) => theme.palette.primary.main }}>
+              {student.name}
+            </Typography>
+            <img
+              style={{
+                width: '60%', // Set the width to 100% of the container
 
+                maxHeight: '150px', // Set a maximum height if needed
+                marginLeft: '20px',
+              }}
+              src={student.image}
+              alt=''
+            />
+            <br />
+            <Typography sx={{ color: (theme) => theme.palette.primary.light }}>
+              {student.house}
+            </Typography>
             <NavLink
               to={`/hogwarts-students/${student.id}`}
-              style={{ textDecoration: 'none', color: 'inherit' }}
+              className='linkStyle'
             >
               More info
             </NavLink>

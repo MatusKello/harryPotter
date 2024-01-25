@@ -5,7 +5,7 @@ const MainPage = () => {
   return (
     <Box
       sx={{
-        height: '93vh',
+        height: '97vh',
         display: 'flex',
         flexDirection: 'column',
 

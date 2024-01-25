@@ -32,14 +32,29 @@ const HogTeachers = () => {
             sx={{
               background: (theme) => theme.palette.secondary.dark,
               m: 1,
+              width: '80%',
             }}
           >
             <Typography sx={{ color: (theme) => theme.palette.primary.main }}>
               {teacher.name}
             </Typography>
+            <img
+              style={{
+                width: '20%', // Set the width to 100% of the container
+
+                maxHeight: '150px', // Set a maximum height if needed
+                marginLeft: '20px',
+              }}
+              src={teacher.image}
+              alt=''
+            />
+            <br />
+            <Typography sx={{ color: (theme) => theme.palette.primary.light }}>
+              {teacher.house}
+            </Typography>
             <NavLink
               to={`/hogwarts-teachers/${teacher.id}`}
-              style={{ textDecoration: 'none', color: 'inherit' }}
+              className='linkStyle'
             >
               More info
             </NavLink>

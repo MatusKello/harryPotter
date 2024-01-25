@@ -5,7 +5,7 @@
   font-size: large;
 }
 
-.active {
+.linkStyle.active {
   text-decoration: underline;
   color: #ff856e;
   font-weight: bold;
