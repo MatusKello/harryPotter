@@ -19,7 +19,16 @@ const AllRoutes = () => {
           <Route path='hogwarts-students/:id' element={<CharactersInfo />} />
           <Route path='hogwarts-teachers/:id' element={<CharactersInfo />} />
           <Route path='hogwarts-houses' element={<HogHouses />} />
-          <Route path='hogwarts-houses/:house' element={<SpecificHouse />} />
+          <Route
+            path='hogwarts-houses/griffindor'
+            element={<SpecificHouse />}
+          />
+          <Route
+            path='hogwarts-houses/hufflepuff'
+            element={<SpecificHouse />}
+          />
+          <Route path='hogwarts-houses/rawenclaw' element={<SpecificHouse />} />
+          <Route path='hogwarts-houses/slytherin' element={<SpecificHouse />} />
           <Route path='all-spells' element={<AllSpells />} />
         </Route>
       </Routes>
