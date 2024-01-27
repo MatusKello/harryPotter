@@ -12,6 +12,9 @@ export const api = createApi({
     fetchTeachers: builder.query({
       query: () => 'characters/staff',
     }),
+    fetchHouse: builder.query({
+      query: (house) => `characters/house/${house}`,
+    }),
     fetchAllSpells: builder.query({
       query: () => 'spells',
     }),
@@ -27,4 +30,5 @@ export const {
   useFetchTeachersQuery,
   useFetchAllSpellsQuery,
   useFetchCharacterByIdQuery,
+  useFetchHouseQuery,
 } = api;
