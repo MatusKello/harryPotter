@@ -31,18 +31,18 @@ const NavBar = () => {
       />
       <Drawer anchor='left' open={drawerOpen} onClose={toggleDrawer(false)}>
         <IconButton
+          onClick={toggleDrawer(false)}
           sx={{ background: (theme) => theme.palette.tertiary.light }}
         >
           <CloseIcon
             sx={{
               m: 1,
             }}
-            onClick={toggleDrawer(false)}
           />
         </IconButton>
         <List sx={{ background: (theme) => theme.palette.tertiary.light }}>
           <ListItem
-            Button
+            button
             component={NavLink}
             to='/'
             onClick={toggleDrawer(false)}
@@ -51,7 +51,7 @@ const NavBar = () => {
             <ListItemText primary='Main page' />
           </ListItem>
           <ListItem
-            Button
+            button
             component={NavLink}
             to='/hogwarts-students'
             onClick={toggleDrawer(false)}
@@ -60,7 +60,7 @@ const NavBar = () => {
             <ListItemText primary='Hogwarts students' />
           </ListItem>
           <ListItem
-            Button
+            button
             component={NavLink}
             to='/hogwarts-teachers'
             onClick={toggleDrawer(false)}
@@ -69,7 +69,7 @@ const NavBar = () => {
             <ListItemText primary='Hogwarts teachers' />
           </ListItem>
           <ListItem
-            Button
+            button
             component={NavLink}
             to='/hogwarts-houses'
             onClick={toggleDrawer(false)}
@@ -78,7 +78,7 @@ const NavBar = () => {
             <ListItemText primary='Hogwarts houses' />
           </ListItem>
           <ListItem
-            Button
+            button
             component={NavLink}
             to='/all-spells'
             onClick={toggleDrawer(false)}
