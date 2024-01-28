@@ -4,5 +4,13 @@
   "hogwartsStudents": "Hogwarts students",
   "hogwartsTeachers": "Hogwarts Teachers",
   "spells": "Spells in Harry Potter universe",
-  "about": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. The main story arc concerns Harry's conflict with Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic, and subjugate all wizards and Muggles (non-magical people)."
+  "about": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. The main story arc concerns Harry's conflict with Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic, and subjugate all wizards and Muggles (non-magical people).",
+  "gryffindor": "Gryffindor",
+  "gryffindorInfo": "Values courage, bravery, nerve, and chivalry. Gryffindor's mascot is the lion, and its colors are scarlet red and gold",
+  "hufflepuff": "Hufflepuff",
+  "hufflepuffInfo": "Values hard work, patience, justice, and loyalty. The Hufflepuff mascot is the badger, and its colors are canary yellow and black",
+  "ravenclaw": "Ravenclaw",
+  "ravenclawInfo": "Values intelligence, learning, wisdom and wit. The Ravenclaw mascot is a raven and the house colors are blue and bronze",
+  "slytherin": "Slytherin",
+  "slytherinInfo": "Values ambition, cunning, leadership, and resourcefulness. The Slytherin mascot is the serpent, and the house colors are green and silver."
 }

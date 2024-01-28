@@ -4,5 +4,13 @@
   "hogwartsStudents": "Rokfortský študenti",
   "hogwartsTeachers": "Rokfortský učitelia",
   "spells": "Kúzla vo svete Harryho Pottera",
-  "about": "Harry Potter je séria siedmich fantasy románov od britskej autorky J. K. Rowlingovej. Romány zaznamenávajú životy mladého čarodejníka Harryho Pottera a jeho priateľov Hermiony Grangerovej a Rona Weasleyho, ktorí sú všetci študentmi Rokfortskej čarodejníckej školy. Hlavný príbehový oblúk sa týka Harryho konfliktu s Lordom Voldemortom, temným čarodejníkom, ktorý má v úmysle stať sa nesmrteľným, zvrhnúť Ministerstvo mágie a podmaniť si všetkých čarodejníkov a muklov (nemagických ľudí)."
+  "about": "Harry Potter je séria siedmich fantasy románov od britskej autorky J. K. Rowlingovej. Romány zaznamenávajú životy mladého čarodejníka Harryho Pottera a jeho priateľov Hermiony Grangerovej a Rona Weasleyho, ktorí sú všetci študentmi Rokfortskej čarodejníckej školy. Hlavný príbehový oblúk sa týka Harryho konfliktu s Lordom Voldemortom, temným čarodejníkom, ktorý má v úmysle stať sa nesmrteľným, zvrhnúť Ministerstvo mágie a podmaniť si všetkých čarodejníkov a muklov (nemagických ľudí).",
+  "gryffindor": "Chrabromil",
+  "gryffindorInfo": "Cení si odvahu, statočnosť, pevné nervy a šľachetnosť. Maskotom Chrabromilu je lev a jeho farby sú šarlátová červená a zlatá.",
+  "hufflepuff": "Bifľomor",
+  "hufflepuffInfo": "Cení si tvrdú prácu, trpezlivosť, spravodlivosť a lojalitu. Maskotom Bifľomoru je jazvec a jeho farby sú kanárikovo žltá a čierna.",
+  "ravenclaw": "Bystrohlav",
+  "ravenclawInfo": "Oceňuje inteligenciu, učenie, múdrosť a dôvtip. Maskotom Bystrohlavu je havran a jeho farby sú modrá a bronzová",
+  "slytherin": "Slizolin",
+  "slytherinInfo": "Cení si ambície, prefíkanosť, vodcovstvo a vynaliezavosť. Maskot Slizolinu je had a jeho farby sú zelená a strieborná."
 }
