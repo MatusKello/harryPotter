@@ -7,10 +7,11 @@ import slytherin from '../images/slytherin.png';
 
 const HogHouses = () => {
   const imgStyle = {
-    width: '400px', // Set your desired width
-    height: '400px', // Set your desired height
+    width: '350px',
+    height: '350px',
     border: '2px solid red',
     cursor: 'pointer',
+    borderRadius: 5,
   };
 
   return (
@@ -20,7 +21,8 @@ const HogHouses = () => {
         flexDirection: 'column',
         gap: '10px',
         alignItems: 'center',
-        height: '97vh',
+        height: '95vh',
+        mt: '12px',
       }}
     >
       <Box sx={{ display: 'flex', gap: '10px' }}>

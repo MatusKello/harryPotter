@@ -8,7 +8,6 @@ const MainPage = () => {
         height: '97vh',
         display: 'flex',
         flexDirection: 'column',
-
         alignItems: 'center',
       }}
     >

@@ -21,7 +21,6 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    indent: ['error', 2], // Set your preferred indentation (e.g., 2 spaces)
     quotes: ['error', 'single'], // Prefer single quotes
     semi: ['error', 'always'], // Enforce semicolons at the end of statements
     'no-var': 'error',
