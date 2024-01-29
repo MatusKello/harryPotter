@@ -1,4 +1,4 @@
-import { NavLink, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useFetchCharacterByIdQuery } from '../apiSlice';
 import { Box, Card, Typography } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
@@ -62,16 +62,6 @@ const CharactersInfo = () => {
             alt={exactCharacter.name || ''}
           />
         </Card>
-        <NavLink
-          to={
-            exactCharacterData.hogwartsStudent === true
-              ? '/hogwarts-students'
-              : '/hogwarts-teachers'
-          }
-          className='linkStyle'
-        >
-          Back to all
-        </NavLink>
       </Box>
     </DataFetcherWrapper>
   );
