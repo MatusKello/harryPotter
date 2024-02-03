@@ -1,5 +1,6 @@
 import { Box } from '@mui/material';
 import Translation from '../components/Translation';
+import Redirection from '../components/Redirection';
 
 const MainPage = () => {
   return (
@@ -40,7 +41,7 @@ const MainPage = () => {
           }}
         />
       </Box>
-      <br />
+      <Redirection />
       <Box
         sx={{
           position: 'absolute',

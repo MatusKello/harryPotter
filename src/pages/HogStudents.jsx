@@ -3,12 +3,35 @@ import { Box, Card, Typography } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
 import { NavLink } from 'react-router-dom';
 import Translation from '../components/Translation';
+import CharactersAutocomplete from '../components/CharactersAutocomplete';
+import { useEffect, useState } from 'react';
 
 const HogStudents = () => {
+  const [searchedStudent, setSearchedStudents] = useState('');
+  const [filteredStudents, setFilteredStudents] = useState([]);
   const allStudents = useFetchAllStudentsQuery();
+  const allStudentsData = (allStudents.isSuccess && allStudents?.data) || [];
+
+  useEffect(() => {
+    if (allStudentsData) {
+      setFilteredStudents(allStudentsData);
+    }
+  }, [allStudents]);
+
+  useEffect(() => {
+    setFilteredStudents(
+      allStudentsData.filter((student) =>
+        student.name.toLowerCase().includes(searchedStudent.toLocaleLowerCase())
+      )
+    );
+  }, [searchedStudent]);
 
   return (
     <DataFetcherWrapper queryResponse={[allStudents]}>
+      <CharactersAutocomplete
+        allStudentsData={allStudentsData}
+        setSearchedStudents={setSearchedStudents}
+      />
       <Translation
         text='hogwartsStudents'
         typographyProps={{
@@ -27,7 +50,7 @@ const HogStudents = () => {
           gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', // Adjust the column width as needed
         }}
       >
-        {allStudents?.data?.map((student) => (
+        {filteredStudents?.map((student) => (
           <Card
             key={student.id}
             sx={{
