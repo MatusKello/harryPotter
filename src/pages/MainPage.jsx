@@ -1,64 +1,70 @@
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import Translation from '../components/Translation';
 import Redirection from '../components/Redirection';
 
 const MainPage = () => {
   return (
-    <Box
-      sx={{
-        height: '97vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
+    <Grid
+      container
+      direction='column'
+      justifyContent='center'
+      alignItems='center'
+      height='97vh'
     >
-      <Translation
-        text='welcome'
-        typographyProps={{
-          variant: 'h2',
-          sx: { color: (theme) => theme.palette.primary.main },
-        }}
-      />
-      <Box
-        sx={{
-          position: 'relative',
-          '&:hover': {
-            borderColor: (theme) => theme.palette.secondary.main,
-          },
-          borderWidth: 2,
-          borderStyle: 'solid',
-          padding: 2,
-          borderRadius: 4,
-          width: 600,
-          textAlign: 'center',
-        }}
-      >
+      <Grid item>
         <Translation
-          text='about'
+          text='welcome'
           typographyProps={{
-            variant: 'subtitle1',
+            variant: 'h2',
             sx: { color: (theme) => theme.palette.primary.main },
           }}
         />
-      </Box>
-      <Redirection />
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: 0,
-          right: 0,
-          m: 1,
-        }}
-      >
-        <Translation
-          text='author'
-          typographyProps={{
-            variant: 'caption',
-            sx: { color: (theme) => theme.palette.secondary.dark },
+      </Grid>
+      <Grid item>
+        <Box
+          sx={{
+            position: 'relative',
+            '&:hover': {
+              borderColor: (theme) => theme.palette.secondary.main,
+            },
+            borderWidth: 2,
+            borderStyle: 'solid',
+            padding: 2,
+            borderRadius: 4,
+            maxWidth: 600,
+            widthL: '100%',
+            textAlign: 'center',
           }}
-        />
-      </Box>
-    </Box>
+        >
+          <Translation
+            text='about'
+            typographyProps={{
+              variant: 'subtitle1',
+              sx: { color: (theme) => theme.palette.primary.main },
+            }}
+          />
+        </Box>
+      </Grid>
+      <Grid item>
+        {/* <Redirection /> */}
+        <Box
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+            m: 1,
+          }}
+        >
+          <Translation
+            text='author'
+            typographyProps={{
+              variant: 'caption',
+              sx: { color: (theme) => theme.palette.secondary.dark },
+            }}
+          />
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 

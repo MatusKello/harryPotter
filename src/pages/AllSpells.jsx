@@ -1,5 +1,5 @@
 import { useFetchAllSpellsQuery } from '../apiSlice';
-import { Box, Card, Typography } from '@mui/material';
+import { Grid, Card, Typography } from '@mui/material';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
 import Translation from '../components/Translation';
 
@@ -19,29 +19,25 @@ const AllSpells = () => {
           variant: 'h2',
         }}
       />
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', // Adjust the column width as needed
-        }}
-      >
+      <Grid container spacing={2}>
         {spells?.data?.map((spell) => (
-          <Card
-            key={spell.id}
-            sx={{
-              background: (theme) => theme.palette.secondary.dark,
-              m: 1,
-            }}
-          >
-            <Typography sx={{ color: (theme) => theme.palette.primary.main }}>
-              Spell: {spell.name}
-            </Typography>
-            <Typography sx={{ color: (theme) => theme.palette.primary.main }}>
-              Description: {spell.description}
-            </Typography>
-          </Card>
+          <Grid item xs={12} sm={6} md={4} lg={3} xl={2} key={spell.id}>
+            <Card
+              sx={{
+                background: (theme) => theme.palette.secondary.dark,
+                m: 1,
+              }}
+            >
+              <Typography sx={{ color: (theme) => theme.palette.primary.main }}>
+                Spell: {spell.name}
+              </Typography>
+              <Typography sx={{ color: (theme) => theme.palette.primary.main }}>
+                Description: {spell.description}
+              </Typography>
+            </Card>
+          </Grid>
         ))}
-      </Box>
+      </Grid>
     </DataFetcherWrapper>
   );
 };

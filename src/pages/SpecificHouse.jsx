@@ -1,7 +1,7 @@
 import { Box, Card, Typography } from '@mui/material';
 import { useFetchHouseQuery } from '../apiSlice';
 import DataFetcherWrapper from '../components/DataFetcherWrapper';
-import { NavLink, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Translation from '../components/Translation';
 import { houseSwitch } from '../helpers';
 
@@ -40,7 +40,8 @@ const SpecificHouse = () => {
           display: 'grid',
           gap: '5px',
           gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
-          height: '97vh',
+
+          background: houseSwitch(house).backgroundColor,
         }}
       >
         {allCharactersInHouse?.data?.map((character) => (
@@ -53,12 +54,20 @@ const SpecificHouse = () => {
           >
             <Typography variant='h5'>{character.name}</Typography>
             <Typography>House: {character.house}</Typography>
+            <Typography>Actor name: {character.actor}</Typography>
+            <Typography></Typography>
+            <img
+              style={{
+                width: '40%', // Set the width to 100% of the container
+
+                maxHeight: '150px', // Set a maximum height if needed
+                marginLeft: '20px',
+              }}
+              src={character.image}
+              alt=''
+            />
           </Card>
         ))}
-
-        <NavLink to='/hogwarts-houses' className='linkStyle'>
-          Back to all houses
-        </NavLink>
       </Box>
     </DataFetcherWrapper>
   );
