@@ -39,7 +39,7 @@ const SpecificHouse = () => {
         sx={{
           display: 'grid',
           gap: '5px',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
 
           background: houseSwitch(house).backgroundColor,
         }}

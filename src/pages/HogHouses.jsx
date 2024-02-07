@@ -21,7 +21,7 @@ const HogHouses = () => {
         flexDirection: 'column',
         gap: '10px',
         alignItems: 'center',
-        height: '95vh',
+        height: '92vh',
         mt: '12px',
       }}
     >

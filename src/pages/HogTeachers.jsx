@@ -22,8 +22,9 @@ const HogTeachers = () => {
       />
       <Box
         sx={{
+          height: '83vh',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(500px, 1fr))', // Adjust the column width as needed
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', // Adjust the column width as needed
         }}
       >
         {allTeachers?.data?.map((teacher) => (
