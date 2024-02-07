@@ -5,6 +5,7 @@ const CharactersAutocomplete = ({ allStudentsData, setSearchedStudents }) => {
     <Autocomplete
       id='character-autocomplete'
       options={allStudentsData.map((character) => character.name)}
+      onChange={(e, value) => setSearchedStudents(value)}
       renderInput={(params) => (
         <TextField
           {...params}

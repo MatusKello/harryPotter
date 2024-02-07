@@ -13,7 +13,7 @@ const HogStudents = () => {
   const allStudentsData = (allStudents.isSuccess && allStudents?.data) || [];
 
   useEffect(() => {
-    if (allStudentsData) {
+    if (allStudentsData && allStudentsData.length > 0) {
       setFilteredStudents(allStudentsData);
     }
   }, [allStudents]);
@@ -21,7 +21,9 @@ const HogStudents = () => {
   useEffect(() => {
     setFilteredStudents(
       allStudentsData.filter((student) =>
-        student.name.toLowerCase().includes(searchedStudent.toLocaleLowerCase())
+        student.name
+          .toLowerCase()
+          .includes(searchedStudent?.toLocaleLowerCase() || '')
       )
     );
   }, [searchedStudent]);
@@ -47,7 +49,7 @@ const HogStudents = () => {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', // Adjust the column width as needed
+          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', // Adjust the column width as needed
         }}
       >
         {filteredStudents?.map((student) => (
