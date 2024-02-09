@@ -4,25 +4,25 @@ export const houseSwitch = (house) => {
       return {
         title: 'gryffindor',
         info: 'gryffindorInfo',
-        backgroundColor: 'red',
+        backgroundColor: '#7F0909',
       };
     case 'hufflepuff':
       return {
         title: 'hufflepuff',
         info: 'hufflepuffInfo',
-        backgroundColor: 'yellow',
+        backgroundColor: '#ecb939',
       };
     case 'ravenclaw':
       return {
         title: 'ravenclaw',
         info: 'ravenclawInfo',
-        backgroundColor: 'blue',
+        backgroundColor: '#000863',
       };
     case 'slytherin':
       return {
         title: 'slytherin',
         info: 'slytherinInfo',
-        backgroundColor: 'green',
+        backgroundColor: '#2a6e29',
       };
     default:
       return { title: 'Unknown', info: '' };

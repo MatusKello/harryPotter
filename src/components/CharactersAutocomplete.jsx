@@ -3,6 +3,7 @@ import { Autocomplete, TextField } from '@mui/material';
 const CharactersAutocomplete = ({ allStudentsData, setSearchedStudents }) => {
   return (
     <Autocomplete
+      sx={{ width: 250, mt: 1 }}
       id='character-autocomplete'
       options={allStudentsData.map((character) => character.name)}
       onChange={(e, value) => setSearchedStudents(value)}

@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Grid } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import gryffindor from '../images/gryffindor.png';
 import hufflepuff from '../images/hufflepuff.png';
@@ -15,33 +15,39 @@ const HogHouses = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px',
-        alignItems: 'center',
-        height: '92vh',
-        mt: '12px',
-      }}
+    <Grid
+      container
+      direction='column'
+      justifyContent='center'
+      alignItems='center'
+      spacing={2}
+      sx={{ height: '92vh', marginTop: '12px' }}
     >
-      <Box sx={{ display: 'flex', gap: '10px' }}>
-        <NavLink to={'/hogwarts-houses/gryffindor'}>
-          <img src={gryffindor} alt='' style={imgStyle} />
-        </NavLink>
-        <NavLink to={'/hogwarts-houses/hufflepuff'}>
-          <img src={hufflepuff} alt='' style={imgStyle} />
-        </NavLink>
-      </Box>
-      <Box sx={{ display: 'flex', gap: '10px' }}>
-        <NavLink to={'/hogwarts-houses/ravenclaw'}>
-          <img src={ravenclaw} alt='' style={imgStyle} />
-        </NavLink>
-        <NavLink to={'/hogwarts-houses/slytherin'}>
-          <img src={slytherin} alt='' style={imgStyle} />
-        </NavLink>
-      </Box>
-    </Box>
+      <Grid item container justifyContent='center' spacing={2}>
+        <Grid item>
+          <NavLink to={'/hogwarts-houses/gryffindor'}>
+            <img src={gryffindor} alt='' style={imgStyle} />
+          </NavLink>
+        </Grid>
+        <Grid item>
+          <NavLink to={'/hogwarts-houses/hufflepuff'}>
+            <img src={hufflepuff} alt='' style={imgStyle} />
+          </NavLink>
+        </Grid>
+      </Grid>
+      <Grid item container justifyContent='center' spacing={2}>
+        <Grid item>
+          <NavLink to={'/hogwarts-houses/ravenclaw'}>
+            <img src={ravenclaw} alt='' style={imgStyle} />
+          </NavLink>
+        </Grid>
+        <Grid item>
+          <NavLink to={'/hogwarts-houses/slytherin'}>
+            <img src={slytherin} alt='' style={imgStyle} />
+          </NavLink>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 

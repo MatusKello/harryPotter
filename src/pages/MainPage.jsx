@@ -1,6 +1,7 @@
 import { Box, Grid } from '@mui/material';
 import Translation from '../components/Translation';
-import Redirection from '../components/Redirection';
+//import Redirection from '../components/Redirection';
+import hogwarts from '../images/hogwarts.png';
 
 const MainPage = () => {
   return (
@@ -9,7 +10,7 @@ const MainPage = () => {
       direction='column'
       justifyContent='center'
       alignItems='center'
-      height='97vh'
+      height='93vh'
     >
       <Grid item>
         <Translation
@@ -31,7 +32,7 @@ const MainPage = () => {
             borderStyle: 'solid',
             padding: 2,
             borderRadius: 4,
-            maxWidth: 600,
+            maxWidth: 650,
             widthL: '100%',
             textAlign: 'center',
           }}
@@ -43,6 +44,7 @@ const MainPage = () => {
               sx: { color: (theme) => theme.palette.primary.main },
             }}
           />
+          <img src={hogwarts} alt='hogwarts castle' />
         </Box>
       </Grid>
       <Grid item>
