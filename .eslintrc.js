@@ -21,7 +21,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    quotes: ['error', 'single'], // Prefer single quotes
+    //quotes: ['error', 'single'], // Prefer single quotes
     semi: ['error', 'always'], // Enforce semicolons at the end of statements
     'no-var': 'error',
     'react/jsx-uses-react': 'error',

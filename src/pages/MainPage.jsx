@@ -2,6 +2,7 @@ import { Box, Grid } from '@mui/material';
 import Translation from '../components/Translation';
 //import Redirection from '../components/Redirection';
 import hogwarts from '../images/hogwarts.png';
+import TriviaQuestions from '../components/TriviaQuestions';
 
 const MainPage = () => {
   return (
@@ -21,6 +22,7 @@ const MainPage = () => {
           }}
         />
       </Grid>
+      <TriviaQuestions />
       <Grid item>
         <Box
           sx={{
