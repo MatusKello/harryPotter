@@ -17,6 +17,7 @@ const TriviaQuestions = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answerStatus, setAnswerStatus] = useState(null); // State to track answer status
   const { t } = useTranslation();
+
   // Load last answered question index from localStorage
   useEffect(() => {
     const lastQuestionIndex = localStorage.getItem('lastQuestionIndex');
@@ -73,6 +74,9 @@ const TriviaQuestions = () => {
             transition: 'background-color 0.5s', // Add transition for smoother effect
           }}
         >
+          <Typography id='modal-title' variant='h6' component='h2'>
+            {`${currentQuestionIndex + 1} / ${trivia.length}`}
+          </Typography>
           <Typography id='modal-title' variant='h6' component='h2'>
             Trivia Question
           </Typography>
