@@ -3,6 +3,7 @@ import { Button, Modal, Typography, Box, Card } from '@mui/material';
 import trivia from '../Data/Trivia';
 import Translation from './Translation';
 import { triviaOptionSwitch } from '../helpers';
+import RegisterForm from '../components/RegisterForm';
 
 const TriviaQuestions = () => {
   const [open, setOpen] = useState(false);
@@ -10,6 +11,7 @@ const TriviaQuestions = () => {
   const [answerStatus, setAnswerStatus] = useState(null); // State to track answer status
   const [correctCount, setCorrectCount] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [leaderboard, setLeaderboard] = useState([]);
 
   const handleBgColorChange = (index) => {
     return selectedOption === index && answerStatus === true
@@ -57,6 +59,14 @@ const TriviaQuestions = () => {
     }, 1000);
   };
 
+  const handleLeaderboardSubmission = (data) => {
+    const newEntry = {
+      name: `${data.firstName} ${data.lastName}`,
+      score: correctCount,
+    };
+    setLeaderboard([...leaderboard, newEntry]);
+  };
+
   return (
     <div>
       <Button variant='contained' onClick={() => setOpen(true)}>
@@ -85,14 +95,12 @@ const TriviaQuestions = () => {
               alignItems: 'center',
             }}
           >
-            <Typography id='modal-title' variant='h6' component='h2'>
-              Trivia Question
-            </Typography>
             {currentQuestionIndex < trivia.length && (
               <Typography id='modal-title' variant='h6' component='h2'>
-                {`Question ${currentQuestionIndex + 1}`}
+                {`Question: ${currentQuestionIndex + 1}`}
               </Typography>
             )}
+
             {currentQuestionIndex < trivia.length && (
               <Typography id='modal-title' variant='h6' component='h2'>
                 {`${currentQuestionIndex + 1} / ${trivia.length}`}
@@ -140,8 +148,13 @@ const TriviaQuestions = () => {
                 gutterBottom
               >{`Correct answers: ${correctCount}`}</Typography>
               <Typography id='modal-description'>
-                End of trivia questions.
+                {correctCount >= 17
+                  ? 'True Potter fan'
+                  : correctCount >= 12
+                  ? 'Stupefy!'
+                  : 'Avada Kedavra mudblood!'}
               </Typography>
+              <RegisterForm onSubmitCallback={handleLeaderboardSubmission} />
             </div>
           )}
           <Box
@@ -158,6 +171,16 @@ const TriviaQuestions = () => {
           </Box>
         </Box>
       </Modal>
+      <Box>
+        <Typography variant='h4' gutterBottom>
+          Leaderboard
+        </Typography>
+        {leaderboard.map((entry, index) => (
+          <Typography key={index}>{`${index + 1}. ${entry.name} - ${
+            entry.score
+          }`}</Typography>
+        ))}
+      </Box>
     </div>
   );
 };
