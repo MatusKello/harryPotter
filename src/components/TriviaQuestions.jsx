@@ -11,7 +11,12 @@ const TriviaQuestions = () => {
   const [answerStatus, setAnswerStatus] = useState(null); // State to track answer status
   const [correctCount, setCorrectCount] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [leaderboard, setLeaderboard] = useState([]);
+  const [leaderboard, setLeaderboard] = useState([
+    { name: 'Matus Kello', score: 10 },
+    { name: 'Andrej Bla', score: 15 },
+    { name: 'Adam Lolo', score: 8 },
+    { name: 'Patricia Meh', score: 18 },
+  ]);
 
   const handleBgColorChange = (index) => {
     return selectedOption === index && answerStatus === true
@@ -20,6 +25,28 @@ const TriviaQuestions = () => {
       ? 'red'
       : 'white'; // Set background color based on answer status
   };
+
+  /*   useEffect(() => {
+    // Load trivia progress from localStorage
+    const triviaProgress = JSON.parse(localStorage.getItem('triviaProgress'));
+    if (triviaProgress) {
+      setCurrentQuestionIndex(triviaProgress.currentQuestionIndex);
+      setCorrectCount(triviaProgress.correctCount);
+      setLeaderboard(triviaProgress.leaderboard);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save trivia progress to localStorage whenever it changes
+    localStorage.setItem(
+      'triviaProgress',
+      JSON.stringify({
+        currentQuestionIndex,
+        correctCount,
+        leaderboard,
+      })
+    );
+  }, [currentQuestionIndex, correctCount, leaderboard]); */
 
   // Load last answered question index from localStorage
   useEffect(() => {
@@ -59,19 +86,29 @@ const TriviaQuestions = () => {
     }, 1000);
   };
 
-  const handleLeaderboardSubmission = (data) => {
+  const onSubmitCallback = (data) => {
     const newEntry = {
       name: `${data.firstName} ${data.lastName}`,
+      email: data.email,
       score: correctCount,
     };
     setLeaderboard([...leaderboard, newEntry]);
   };
 
   return (
-    <div>
-      <Button variant='contained' onClick={() => setOpen(true)}>
-        Start Trivia
-      </Button>
+    <Box>
+      <Box
+        sx={{
+          mb: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Button variant='contained' onClick={() => setOpen(true)}>
+          Start Trivia
+        </Button>
+      </Box>
       <Modal
         open={open}
         onClose={handleClose}
@@ -154,7 +191,10 @@ const TriviaQuestions = () => {
                   ? 'Stupefy!'
                   : 'Avada Kedavra mudblood!'}
               </Typography>
-              <RegisterForm onSubmitCallback={handleLeaderboardSubmission} />
+              <RegisterForm
+                onSubmitCallback={onSubmitCallback}
+                setOpen={setOpen}
+              />
             </div>
           )}
           <Box
@@ -171,17 +211,28 @@ const TriviaQuestions = () => {
           </Box>
         </Box>
       </Modal>
-      <Box>
+      <Card
+        sx={{
+          background: (theme) => theme.palette.tertiary.light,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100%',
+        }}
+      >
         <Typography variant='h4' gutterBottom>
           Leaderboard
         </Typography>
         {leaderboard.map((entry, index) => (
-          <Typography key={index}>{`${index + 1}. ${entry.name} - ${
-            entry.score
-          }`}</Typography>
+          <Typography key={index}>
+            {`${index + 1}. ${entry.name} - ${entry.score} - ${
+              entry.email ? entry.email : ''
+            }`}{' '}
+          </Typography>
         ))}
-      </Box>
-    </div>
+      </Card>
+    </Box>
   );
 };
 

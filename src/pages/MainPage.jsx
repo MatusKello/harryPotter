@@ -1,6 +1,5 @@
 import { Box, Grid } from '@mui/material';
 import Translation from '../components/Translation';
-//import Redirection from '../components/Redirection';
 import hogwarts from '../images/hogwarts.png';
 import TriviaQuestions from '../components/TriviaQuestions';
 
@@ -18,39 +17,42 @@ const MainPage = () => {
           text='welcome'
           typographyProps={{
             variant: 'h2',
-            sx: { color: (theme) => theme.palette.primary.main },
+            sx: { color: (theme) => theme.palette.primary.main, m: 1 },
           }}
         />
       </Grid>
-      <TriviaQuestions />
-      <Grid item>
-        <Box
-          sx={{
-            position: 'relative',
-            '&:hover': {
-              borderColor: (theme) => theme.palette.secondary.main,
-            },
-            borderWidth: 2,
-            borderStyle: 'solid',
-            padding: 2,
-            borderRadius: 4,
-            maxWidth: 650,
-            widthL: '100%',
-            textAlign: 'center',
-          }}
-        >
-          <Translation
-            text='about'
-            typographyProps={{
-              variant: 'subtitle1',
-              sx: { color: (theme) => theme.palette.primary.main },
+      <Grid item container spacing={2}>
+        <Grid item xs={5}>
+          <Box
+            sx={{
+              position: 'relative',
+              '&:hover': {
+                borderColor: (theme) => theme.palette.secondary.main,
+              },
+              borderWidth: 2,
+              borderStyle: 'solid',
+              padding: 2,
+              borderRadius: 4,
+              maxWidth: 650,
+              width: '100%',
+              textAlign: 'center',
             }}
-          />
-          <img src={hogwarts} alt='hogwarts castle' />
-        </Box>
+          >
+            <Translation
+              text='about'
+              typographyProps={{
+                variant: 'subtitle1',
+                sx: { color: (theme) => theme.palette.primary.main },
+              }}
+            />
+            <img src={hogwarts} alt='hogwarts castle' />
+          </Box>
+        </Grid>
+        <Grid item xs={2}>
+          <TriviaQuestions />
+        </Grid>
       </Grid>
       <Grid item>
-        {/* <Redirection /> */}
         <Box
           sx={{
             position: 'absolute',
